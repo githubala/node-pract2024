@@ -10,6 +10,10 @@ function addNote(title, body) {
   } catch (e) {}
 }
 
+function removeNote(title) {
+  console.log('remove the' + title );
+}
+
 module.exports = {
   getNotes: getNotes,
   addNote: addNote,
