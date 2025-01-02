@@ -10,7 +10,7 @@ function addNote(title, body) {
   } catch (e) {}
 }
 
-function removeNote(title) {
+function removeNote(title) { 
   console.log('remove the' + title );
 }
 
