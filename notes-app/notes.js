@@ -5,10 +5,21 @@ function getNotes() {
 }
 
 function addNote(title, body) {
-  console.log(title + ' this is the title');
-  const databuffer = fs.readFileSync(notes.json);
-  const dataStr = databuffer.toString();
-  console.log(dataStr);
+  const notes = loadNotes()
+  console.log(notes);
+}
+
+function loadNotes(){
+     const databuffer = fs.readFileSync('notes.json');
+    const dataJSON = databuffer.toString();
+    return JSON.parse(dataJSON);
+  // try {
+  //   const databuffer = fs.readFileSync('notes.json');
+  //   const dataJSON = databuffer.toString();
+  //   return JSON.parse(dataJSON);
+  // } catch(e) {
+  //   return []
+  // }
 }
 
 function removeNote(title) { 

@@ -19,7 +19,7 @@ yargs.command({
       describe: 'body notes',
       demandOption: true,
       type: 'string',
-    },
+    }
   },
   handler: function (argv) {
     //console.log('add item', argv.title + ' ' + argv.body);
