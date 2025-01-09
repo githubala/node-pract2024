@@ -6,8 +6,9 @@ function getNotes() {
 
 function addNote(title, body) {
   console.log(title + ' this is the title');
-  try {
-  } catch (e) {}
+  const databuffer = fs.readFileSync(notes.json);
+  const dataStr = databuffer.toString();
+  console.log(dataStr);
 }
 
 function removeNote(title) { 
