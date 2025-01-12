@@ -1,3 +1,4 @@
+const { time } = require('console');
 const fs = require('fs');
 
 function getNotes() {
@@ -6,7 +7,30 @@ function getNotes() {
 
 function addNote(title, body) {
   const notes = loadNotes()
+
+  const duplicates = notes.filter(function(note){
+    return note.title === title;
+  })
+
+  if(duplicates.length === 0)
+  {
+    notes.push({
+      title:title,
+      body:body
+    })
+  
+    saveNotes(notes);
+    console.log('title added !');
+  } else{
+    console.log('title already taken !!')
+  }
+  
+}
+
+function saveNotes(notes){
   console.log(notes);
+  const dataJSON = JSON.stringify(notes);
+  fs.writeFileSync('notes.json', dataJSON);
 }
 
 function loadNotes(){     
