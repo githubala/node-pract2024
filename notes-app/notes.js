@@ -43,11 +43,16 @@ function loadNotes(){
   }
 }
 
-function removeNote(title) { 
-  console.log('remove the' + title );
+function deleteNote(title) { 
+  const notes = loadNotes();
+  const fNotes = notes.filter(t=>{
+    return t.title !== title;  
+  })
+  saveNotes(fNotes);
 }
 
 module.exports = {
   getNotes: getNotes,
   addNote: addNote,
+  deleteNote: deleteNote
 };
