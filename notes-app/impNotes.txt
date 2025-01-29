@@ -1,0 +1,39 @@
+
+point 1: difference between functions and methods are function are called independently but methods are
+related to the object example like below
+let info : {
+    let 
+    
+    
+    event = 'someEven',
+    eventName : function(){
+        console.log('we setup a party name : ' +this.event );
+    }
+}
+here the function eventName is a method related to the object info and can be called as below
+info.eventName();
+'we setup a party  name someEven'
+so in the above code we have an acces to the value event
+
+
+point when we try use arrow function as methods like the below it won;t work
+
+let info : {
+    let 
+    
+    
+    event = 'someEven',
+    eventName: () => {
+        console.log('we setup a party name : ' +this.event );
+    }
+}
+
+if we call info.eventName();
+//we setup a party name undefined
+
+so we do not have an acces to the value of event
+because this in the arrow function have access to the context function or global like 
+windows in browser and in nodejs its global
+
+
+
