@@ -11,7 +11,7 @@ function addNote(title, body) {
   const duplicates = notes.filter(function(note){
     return note.title === title;
   })
-
+  debugger
   if(duplicates.length === 0)
   {
     notes.push({
