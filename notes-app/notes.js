@@ -17,8 +17,7 @@ function addNote(title, body) {
     notes.push({
       title:title,
       body:body
-    })
-  
+    })  
     saveNotes(notes);
     console.log('title added !');
   } else{
